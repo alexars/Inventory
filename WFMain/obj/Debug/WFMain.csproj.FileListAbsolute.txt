@@ -14,5 +14,3 @@ D:\OneDrive\Projects\Inventory\WFMain\bin\Debug\EntityFramework.xml
 D:\OneDrive\Projects\Inventory\WFMain\bin\Debug\Inventory.dll.config
 D:\OneDrive\Projects\Inventory\WFMain\bin\Debug\EntityFramework.SqlServer.dll
 D:\OneDrive\Projects\Inventory\WFMain\bin\Debug\EntityFramework.SqlServer.xml
-D:\OneDrive\Projects\Inventory\WFMain\bin\Debug\WFMain.exe.CodeAnalysisLog.xml
-D:\OneDrive\Projects\Inventory\WFMain\bin\Debug\WFMain.exe.lastcodeanalysissucceeded

@@ -10,5 +10,4 @@ D:\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.pdb
 D:\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.Migrations.InitDB.resources
 D:\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.csproj.GenerateResource.Cache
 D:\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.Migrations.MakerChanged.resources
-D:\OneDrive\Projects\Inventory\Inventory\bin\Debug\Inventory.dll.CodeAnalysisLog.xml
-D:\OneDrive\Projects\Inventory\Inventory\bin\Debug\Inventory.dll.lastcodeanalysissucceeded
+D:\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache

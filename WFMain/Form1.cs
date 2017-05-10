@@ -15,21 +15,27 @@ namespace WFMain
     public partial class Form1 : Form
     {
         UnitOfWork ui = new UnitOfWork();
-        Maker maker;
+      //  Maker maker;
         public Form1()
         {
             InitializeComponent();
-
+            
             var makers = ui.Makers.GetAll();
+            var departments = ui.Departments.GetAll();
+            var persons = ui.Persons.GetAll();
             dgvMakers.DataSource = makers.ToBindingList();
+            dgvDepartments.DataSource = departments.ToBindingList();
+            InitDgv();
         }
-
+        //TODO: Check later
+        private void InitDgv()
+        {
+            this.dgvDepartments.Columns[2].Visible = false;
+        }
         private void btnMakerName_Click(object sender, EventArgs e)
         {
-            maker = new Maker() { ID = Guid.NewGuid(), Name = tbMakerName.Text.Trim() };
-            ui.Makers.Create(maker);
 
-            ui.SaveAll();
+            //maker = new Maker() { ID = Guid.NewGuid(), Name = tbMakerName.Text.Trim() };
             
             tbMakerName.Clear();
 
@@ -37,11 +43,25 @@ namespace WFMain
 
         private void btnChangeMakerName_Click(object sender, EventArgs e)
         {
+            
             Maker maker= ui.Makers.Get(new Guid((dgvMakers.CurrentCell.Value).ToString()));
             maker.Name = txtbxNewMakerName.Text.Trim();
             txtbxNewMakerName.Clear();
             ui.Makers.Update(maker);
             ui.SaveAll();
+        }
+
+        private void btnNewDepartment_Click(object sender, EventArgs e)
+        {
+            
+            ui.Departments.Create(new Department() { ID = Guid.NewGuid(), Name = txtbxNewDepartment.Text.Trim() });
+            txtbxNewDepartment.Clear();
+            ui.SaveAll();
+        }
+
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

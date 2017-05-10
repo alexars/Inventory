@@ -12,7 +12,7 @@ namespace Inventory.Core.Repositories
         ObservableCollection<TEntity> GetAll();
         TEntity Get(Guid id);
         void Create(TEntity item);
-        void Update(TEntity item);
+        void Update(TEntity entity);
         void Delete(Guid id);
        
       

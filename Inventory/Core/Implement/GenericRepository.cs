@@ -9,7 +9,7 @@ using Inventory.Core.Domain;
 using System.Data.Entity;
 namespace Inventory.Core.Implement
 {
-    public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : class
+    public abstract class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         private InventoryContext context;
         public GenericRepository(InventoryContext context)
@@ -45,9 +45,14 @@ namespace Inventory.Core.Implement
             return context.Set<TEntity>().Local;
         }
 
-        public void Update(TEntity item)
+        public virtual void Update(TEntity entityToUpdate)
         {
-            context.Entry(item).State = EntityState.Modified;
+            
+            //define new entityToUpdate
+            
+            context.Set<TEntity>().Attach(entityToUpdate);
+            context.Entry(entityToUpdate).State = EntityState.Modified;
         }
+       
     }
 }

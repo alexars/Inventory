@@ -12,42 +12,23 @@ namespace Inventory.Core.Implement
 {
    public class MakerRepository:GenericRepository<Maker>, IMakerRepository
     {
-        private InventoryContext context;
+    //    private InventoryContext context;
         public MakerRepository(InventoryContext context):base(context)
         {
             
         }
 
-        //public void Create(Maker item)
+        public override void Update(Maker entityToUpdate)
+        {
+            base.Update(entityToUpdate);
+        }
         //{
-           
-        //    context.Makers.Add(item);
-        //}
-
-        //public void Delete(int id)
-        //{
-        //    Maker maker = context.Makers.Find(id);
-        //    if (maker!=null)
+        //    var maker = context.Makers.Find(id);
+        //    if (maker != null)
         //    {
-        //        context.Makers.Remove(maker);
+        //        maker.Name = newName;
+        //        context.SaveChanges();
         //    }
-        //}
-
-        //public Maker Get(int id)
-        //{
-        //    return context.Makers.Find(id);
-        //}
-
-        //public ObservableCollection<Maker> GetAll()
-        //{
-        //    context.Makers.Load();
-        //    return context.Makers.Local;
-        //    //return context.Makers;
-        //}
-
-        //public void Update(Maker item)
-        //{
-        //    context.Entry(item).State = System.Data.Entity.EntityState.Modified;
         //}
     }
 }

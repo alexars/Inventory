@@ -37,20 +37,26 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDepartments = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnNewDepartment = new System.Windows.Forms.Button();
+            this.txtbxNewDepartment = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMakers = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tbMakerName = new System.Windows.Forms.TextBox();
             this.btnMakerName = new System.Windows.Forms.Button();
+            this.btnChangeMakerName = new System.Windows.Forms.Button();
+            this.txtbxNewMakerName = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvModels = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.btnChangeMakerName = new System.Windows.Forms.Button();
-            this.txtbxNewMakerName = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddNewPerson = new System.Windows.Forms.Button();
+            this.txtbxNewPerson = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -58,6 +64,7 @@
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
+            this.tableLayoutPanel7.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMakers)).BeginInit();
@@ -65,6 +72,7 @@
             this.tabPage5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModels)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -109,12 +117,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.dgvPersons, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel8, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.07349F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.92651F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(627, 381);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -122,9 +131,9 @@
             // 
             this.dgvPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPersons.Location = new System.Drawing.Point(3, 60);
+            this.dgvPersons.Location = new System.Drawing.Point(3, 49);
             this.dgvPersons.Name = "dgvPersons";
-            this.dgvPersons.Size = new System.Drawing.Size(621, 318);
+            this.dgvPersons.Size = new System.Drawing.Size(621, 329);
             this.dgvPersons.TabIndex = 0;
             // 
             // tabPage3
@@ -144,12 +153,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.dgvDepartments, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.54856F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.45145F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(627, 381);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -157,10 +167,43 @@
             // 
             this.dgvDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDepartments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDepartments.Location = new System.Drawing.Point(3, 60);
+            this.dgvDepartments.Location = new System.Drawing.Point(3, 46);
             this.dgvDepartments.Name = "dgvDepartments";
-            this.dgvDepartments.Size = new System.Drawing.Size(621, 318);
+            this.dgvDepartments.Size = new System.Drawing.Size(621, 332);
             this.dgvDepartments.TabIndex = 0;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.3494F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.6506F));
+            this.tableLayoutPanel7.Controls.Add(this.btnNewDepartment, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.txtbxNewDepartment, 1, 0);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(415, 37);
+            this.tableLayoutPanel7.TabIndex = 1;
+            // 
+            // btnNewDepartment
+            // 
+            this.btnNewDepartment.Location = new System.Drawing.Point(3, 3);
+            this.btnNewDepartment.Name = "btnNewDepartment";
+            this.btnNewDepartment.Size = new System.Drawing.Size(148, 31);
+            this.btnNewDepartment.TabIndex = 2;
+            this.btnNewDepartment.Text = "Add new Department";
+            this.btnNewDepartment.UseVisualStyleBackColor = true;
+            this.btnNewDepartment.Click += new System.EventHandler(this.btnNewDepartment_Click);
+            // 
+            // txtbxNewDepartment
+            // 
+            this.txtbxNewDepartment.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtbxNewDepartment.Location = new System.Drawing.Point(157, 3);
+            this.txtbxNewDepartment.Name = "txtbxNewDepartment";
+            this.txtbxNewDepartment.Size = new System.Drawing.Size(255, 20);
+            this.txtbxNewDepartment.TabIndex = 3;
             // 
             // tabPage4
             // 
@@ -234,6 +277,23 @@
             this.btnMakerName.Text = "Add new maker";
             this.btnMakerName.Click += new System.EventHandler(this.btnMakerName_Click);
             // 
+            // btnChangeMakerName
+            // 
+            this.btnChangeMakerName.Location = new System.Drawing.Point(313, 38);
+            this.btnChangeMakerName.Name = "btnChangeMakerName";
+            this.btnChangeMakerName.Size = new System.Drawing.Size(120, 30);
+            this.btnChangeMakerName.TabIndex = 5;
+            this.btnChangeMakerName.Text = "Change Maker Name";
+            this.btnChangeMakerName.UseVisualStyleBackColor = true;
+            this.btnChangeMakerName.Click += new System.EventHandler(this.btnChangeMakerName_Click);
+            // 
+            // txtbxNewMakerName
+            // 
+            this.txtbxNewMakerName.Location = new System.Drawing.Point(313, 3);
+            this.txtbxNewMakerName.Name = "txtbxNewMakerName";
+            this.txtbxNewMakerName.Size = new System.Drawing.Size(100, 20);
+            this.txtbxNewMakerName.TabIndex = 6;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.tableLayoutPanel4);
@@ -278,7 +338,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.06897F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.93104F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -308,22 +368,37 @@
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // btnChangeMakerName
+            // tableLayoutPanel8
             // 
-            this.btnChangeMakerName.Location = new System.Drawing.Point(313, 38);
-            this.btnChangeMakerName.Name = "btnChangeMakerName";
-            this.btnChangeMakerName.Size = new System.Drawing.Size(120, 30);
-            this.btnChangeMakerName.TabIndex = 5;
-            this.btnChangeMakerName.Text = "Change Maker Name";
-            this.btnChangeMakerName.UseVisualStyleBackColor = true;
-            this.btnChangeMakerName.Click += new System.EventHandler(this.btnChangeMakerName_Click);
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.62415F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.37585F));
+            this.tableLayoutPanel8.Controls.Add(this.btnAddNewPerson, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.txtbxNewPerson, 1, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(439, 40);
+            this.tableLayoutPanel8.TabIndex = 1;
             // 
-            // txtbxNewMakerName
+            // btnAddNewPerson
             // 
-            this.txtbxNewMakerName.Location = new System.Drawing.Point(313, 3);
-            this.txtbxNewMakerName.Name = "txtbxNewMakerName";
-            this.txtbxNewMakerName.Size = new System.Drawing.Size(100, 20);
-            this.txtbxNewMakerName.TabIndex = 6;
+            this.btnAddNewPerson.Location = new System.Drawing.Point(3, 3);
+            this.btnAddNewPerson.Name = "btnAddNewPerson";
+            this.btnAddNewPerson.Size = new System.Drawing.Size(145, 32);
+            this.btnAddNewPerson.TabIndex = 0;
+            this.btnAddNewPerson.Text = "Add New Person";
+            this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
+            // 
+            // txtbxNewPerson
+            // 
+            this.txtbxNewPerson.Location = new System.Drawing.Point(154, 3);
+            this.txtbxNewPerson.Name = "txtbxNewPerson";
+            this.txtbxNewPerson.Size = new System.Drawing.Size(282, 20);
+            this.txtbxNewPerson.TabIndex = 1;
             // 
             // Form1
             // 
@@ -340,6 +415,8 @@
             this.tabPage3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).EndInit();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMakers)).EndInit();
@@ -348,6 +425,8 @@
             this.tabPage5.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvModels)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -376,6 +455,12 @@
         private System.Windows.Forms.Button btnMakerName;
         private System.Windows.Forms.Button btnChangeMakerName;
         private System.Windows.Forms.TextBox txtbxNewMakerName;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Button btnNewDepartment;
+        private System.Windows.Forms.TextBox txtbxNewDepartment;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Button btnAddNewPerson;
+        private System.Windows.Forms.TextBox txtbxNewPerson;
     }
 }
 

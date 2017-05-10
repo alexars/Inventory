@@ -22,7 +22,7 @@ namespace Inventory.Core.Implement
 
         public UnitOfWork()
         {
-
+            _context.Database.Log = Console.Write;
         }
         public IMakerRepository Makers
         {
@@ -68,7 +68,7 @@ namespace Inventory.Core.Implement
         {
             get
             {
-                if (departmentRepository != null)
+                if (departmentRepository == null)
                     departmentRepository = new DepartmentRepository(_context);
                 return departmentRepository;
             }
