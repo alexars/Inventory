@@ -22,6 +22,7 @@ namespace Inventory.Core.Implement
         {
             base.Update(entityToUpdate);
         }
+        
         //{
         //    var maker = context.Makers.Find(id);
         //    if (maker != null)

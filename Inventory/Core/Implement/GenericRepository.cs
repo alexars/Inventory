@@ -11,7 +11,7 @@ namespace Inventory.Core.Implement
 {
     public abstract class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private InventoryContext context;
+        protected InventoryContext context;
         public GenericRepository(InventoryContext context)
         {
             this.context = context;
@@ -39,7 +39,7 @@ namespace Inventory.Core.Implement
             return context.Set<TEntity>().Find(id);
         }
 
-        public ObservableCollection<TEntity> GetAll()
+        public virtual ObservableCollection<TEntity> GetAll()
         {
             context.Set<TEntity>().Load();
             return context.Set<TEntity>().Local;

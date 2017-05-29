@@ -59,7 +59,7 @@ namespace Inventory.Core.Implement
         {
             get
             {
-                if (licenceRepository != null)
+                if (licenceRepository == null)
                     licenceRepository = new LicenceRepository(_context);
                 return licenceRepository;
             }
@@ -77,7 +77,7 @@ namespace Inventory.Core.Implement
         {
             get
             {
-                if (personRepository != null)
+                if (personRepository == null)
                     personRepository = new PersonRepository(_context);
                 return personRepository;
             }

@@ -5,7 +5,7 @@ namespace Inventory.Core.Domain
 {
     public class InventoryContext : DbContext
     {
-        public InventoryContext() : base("name=InventoryContext")
+        public InventoryContext() : base("name=InventoryContextAlt")
         {
             //var ensureDLLIsCopied =
             //   System.Data.Entity.SqlServer.SqlProviderServices.Instance;
@@ -16,9 +16,8 @@ namespace Inventory.Core.Domain
         public virtual DbSet<Maker> Makers { get; set; }
         public virtual DbSet<Model> Models { get; set; }
         public virtual DbSet<EqType> EqTypes { get; set; }
-        public virtual DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
-
 
     }
 }
