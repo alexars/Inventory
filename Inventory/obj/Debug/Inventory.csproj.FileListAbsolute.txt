@@ -73,3 +73,4 @@ E:\OneDrive\Projects\Inventory\Inventory\bin\Debug\System.Diagnostics.Diagnostic
 E:\OneDrive\Projects\Inventory\Inventory\bin\Debug\System.Interactive.Async.xml
 E:\OneDrive\Projects\Inventory\Inventory\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\OneDrive\Projects\Inventory\Inventory\bin\Debug\System.Text.Encodings.Web.xml
+E:\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.Migrations.Object_Unit_Changed.resources

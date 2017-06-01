@@ -12,23 +12,30 @@ namespace Inventory.Core.Implement
 {
     public class PersonRepository : GenericRepository<Person>, IPersonRepository
     {
-      
+
         public PersonRepository(InventoryContext context) : base(context)
         {
 
         }
         //TODO: make changes
-      public ObservableCollection<Person> GetPersonsWithDepartments()
+        private ObservableCollection<object> people = new ObservableCollection<object>();
+        public ObservableCollection<object> GetPersonsWithDepartments()
         {
-            var pList = (from p in context.People
-                         select p).
-                        Include(d => d.Departments.ID);
-            ObservableCollection<Person> list=new ObservableCollection<Person>();
-            foreach (var item in pList)
+            var search = (from p in context.People
+         .Include("Departments")
+                          select new
+                          {
+                              p.ID,
+                              p.Name,
+                              Department = p.Departments.Name
+                          }).ToList();
+
+
+            foreach (var item in search)
             {
-                list.Add(item);
+                people.Add(item);
             }
-            return list;
+            return people;
         }
     }
 }

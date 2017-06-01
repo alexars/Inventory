@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Data.SqlClient;
 
 namespace Inventory.Core.Domain
@@ -9,7 +10,9 @@ namespace Inventory.Core.Domain
         {
             //var ensureDLLIsCopied =
             //   System.Data.Entity.SqlServer.SqlProviderServices.Instance;
-            //this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
+
         }
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<Licence> Licences { get; set; }

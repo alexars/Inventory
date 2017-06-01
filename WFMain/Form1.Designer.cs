@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -36,6 +37,7 @@
             this.btnAddModel = new System.Windows.Forms.Button();
             this.txtbxNewModelName = new System.Windows.Forms.TextBox();
             this.cmbbxMakers = new System.Windows.Forms.ComboBox();
+            this.cmbbxEqTypeName = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMakers = new System.Windows.Forms.DataGridView();
@@ -64,6 +66,11 @@
             this.txtbxTypeName = new System.Windows.Forms.TextBox();
             this.btnAddNewType = new System.Windows.Forms.Button();
             this.dgvEqTypes = new System.Windows.Forms.DataGridView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvUnit = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.unitOfWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModels)).BeginInit();
@@ -85,6 +92,10 @@
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEqTypes)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUnit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage5
@@ -131,10 +142,11 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.32076F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.67924F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 325F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel5.Controls.Add(this.btnAddModel, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.txtbxNewModelName, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.cmbbxMakers, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.cmbbxEqTypeName, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -149,7 +161,7 @@
             this.btnAddModel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddModel.Location = new System.Drawing.Point(3, 38);
             this.btnAddModel.Name = "btnAddModel";
-            this.btnAddModel.Size = new System.Drawing.Size(130, 30);
+            this.btnAddModel.Size = new System.Drawing.Size(128, 30);
             this.btnAddModel.TabIndex = 0;
             this.btnAddModel.Text = "Add new Model";
             this.btnAddModel.UseVisualStyleBackColor = true;
@@ -160,17 +172,25 @@
             this.txtbxNewModelName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtbxNewModelName.Location = new System.Drawing.Point(3, 3);
             this.txtbxNewModelName.Name = "txtbxNewModelName";
-            this.txtbxNewModelName.Size = new System.Drawing.Size(130, 20);
+            this.txtbxNewModelName.Size = new System.Drawing.Size(128, 20);
             this.txtbxNewModelName.TabIndex = 1;
             // 
             // cmbbxMakers
             // 
             this.cmbbxMakers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbbxMakers.FormattingEnabled = true;
-            this.cmbbxMakers.Location = new System.Drawing.Point(139, 3);
+            this.cmbbxMakers.Location = new System.Drawing.Point(137, 3);
             this.cmbbxMakers.Name = "cmbbxMakers";
             this.cmbbxMakers.Size = new System.Drawing.Size(122, 21);
             this.cmbbxMakers.TabIndex = 2;
+            // 
+            // cmbbxEqTypeName
+            // 
+            this.cmbbxEqTypeName.FormattingEnabled = true;
+            this.cmbbxEqTypeName.Location = new System.Drawing.Point(137, 38);
+            this.cmbbxEqTypeName.Name = "cmbbxEqTypeName";
+            this.cmbbxEqTypeName.Size = new System.Drawing.Size(121, 21);
+            this.cmbbxEqTypeName.TabIndex = 3;
             // 
             // tabPage4
             // 
@@ -371,7 +391,7 @@
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.62415F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.37585F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 252F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 254F));
             this.tableLayoutPanel8.Controls.Add(this.btnAddNewPerson, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.txtbxNewPerson, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.cmbbxDepartments, 2, 0);
@@ -397,16 +417,16 @@
             // 
             this.txtbxNewPerson.Location = new System.Drawing.Point(130, 3);
             this.txtbxNewPerson.Name = "txtbxNewPerson";
-            this.txtbxNewPerson.Size = new System.Drawing.Size(235, 20);
+            this.txtbxNewPerson.Size = new System.Drawing.Size(233, 20);
             this.txtbxNewPerson.TabIndex = 1;
             // 
             // cmbbxDepartments
             // 
             this.cmbbxDepartments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbbxDepartments.FormattingEnabled = true;
-            this.cmbbxDepartments.Location = new System.Drawing.Point(371, 3);
+            this.cmbbxDepartments.Location = new System.Drawing.Point(369, 3);
             this.cmbbxDepartments.Name = "cmbbxDepartments";
-            this.cmbbxDepartments.Size = new System.Drawing.Size(247, 21);
+            this.cmbbxDepartments.Size = new System.Drawing.Size(249, 21);
             this.cmbbxDepartments.TabIndex = 2;
             // 
             // tabControl1
@@ -416,6 +436,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -493,6 +514,60 @@
             this.dgvEqTypes.Size = new System.Drawing.Size(621, 299);
             this.dgvEqTypes.TabIndex = 1;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.tableLayoutPanel11);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(633, 387);
+            this.tabPage6.TabIndex = 6;
+            this.tabPage6.Text = "Unit";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Controls.Add(this.dgvUnit, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 0, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.33596F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.66404F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(627, 381);
+            this.tableLayoutPanel11.TabIndex = 0;
+            // 
+            // dgvUnit
+            // 
+            this.dgvUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUnit.Location = new System.Drawing.Point(3, 50);
+            this.dgvUnit.Name = "dgvUnit";
+            this.dgvUnit.Size = new System.Drawing.Size(621, 328);
+            this.dgvUnit.TabIndex = 0;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 3;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.22293F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.77707F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 307F));
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 2;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(621, 41);
+            this.tableLayoutPanel12.TabIndex = 1;
+            // 
+            // unitOfWorkBindingSource
+            // 
+            this.unitOfWorkBindingSource.DataSource = typeof(Inventory.Core.Implement.UnitOfWork);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -527,6 +602,10 @@
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEqTypes)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUnit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -568,6 +647,12 @@
         private System.Windows.Forms.TextBox txtbxTypeName;
         private System.Windows.Forms.Button btnAddNewType;
         private System.Windows.Forms.DataGridView dgvEqTypes;
+        private System.Windows.Forms.ComboBox cmbbxEqTypeName;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.DataGridView dgvUnit;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.BindingSource unitOfWorkBindingSource;
     }
 }
 

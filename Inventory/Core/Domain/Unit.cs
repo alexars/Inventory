@@ -10,7 +10,8 @@ namespace Inventory.Core.Domain
             Licences = new HashSet<Licence>();
         }
         public Guid ID { get; set; }
-        public int MyProperty { get; set; }
+        public string SerialNumber { get; set; }
+        public string  Description { get; set; }
         public virtual Model Model { get; set; }
         public virtual ICollection<Licence> Licences { get; set; }
     }

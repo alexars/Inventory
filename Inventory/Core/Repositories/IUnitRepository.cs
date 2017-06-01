@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Inventory.Core.Domain;
+using System.Collections.ObjectModel;
 
 namespace Inventory.Core.Repositories
 {
     public interface IUnitRepository : IRepository<Unit>
     {
+        // ObservableCollection<Unit> GetUnitsWithModelsMakers();
+        ObservableCollection<object> GetUnitsWithModelsMakers();
     }
+
 }

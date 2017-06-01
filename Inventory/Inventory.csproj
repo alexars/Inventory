@@ -163,6 +163,10 @@
     <Compile Include="Migrations\201703280950064_MakerChanged.Designer.cs">
       <DependentUpon>201703280950064_MakerChanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705311145509_Object_Unit_Changed.cs" />
+    <Compile Include="Migrations\201705311145509_Object_Unit_Changed.Designer.cs">
+      <DependentUpon>201705311145509_Object_Unit_Changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -180,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703280950064_MakerChanged.resx">
       <DependentUpon>201703280950064_MakerChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311145509_Object_Unit_Changed.resx">
+      <DependentUpon>201705311145509_Object_Unit_Changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -22,51 +22,68 @@ namespace WFMain
 
             var makers = ui.Makers.GetAll();
             var departments = ui.Departments.GetAll();
-            var persons = ui.Persons.GetAll();
+            var persons = ui.Persons.GetPersonsWithDepartments();
             var models = ui.Models.GetAll();
             var types = ui.EqTypes.GetAll();
+            var units = ui.Units.GetUnitsWithModelsMakers();
 
-    
 
-            dgvPersons.DataSource = persons;
+            //Assigne datasources
+            dgvPersons.DataSource = persons.ToBindingList();
             dgvMakers.DataSource = makers.ToBindingList();
             dgvDepartments.DataSource = departments.ToBindingList();
             dgvModels.DataSource = models.ToBindingList();
             dgvEqTypes.DataSource = types.ToBindingList();
+            dgvUnit.DataSource = units.ToBindingList();
 
             cmbbxDepartments.DataSource = departments.ToBindingList();
             cmbbxMakers.DataSource = makers.ToBindingList();
+            cmbbxEqTypeName.DataSource = types.ToBindingList();
 
             //  Init Departments ComboBox
             cmbbxDepartments.DisplayMember = "Name";
             cmbbxDepartments.ValueMember = "ID";
+            //Init Equipment Types 
+            cmbbxEqTypeName.DisplayMember = "Name";
+            cmbbxEqTypeName.ValueMember = "ID";
 
             //Init Makers Combobox
             cmbbxMakers.DisplayMember = "Name";
             cmbbxMakers.ValueMember = "ID";
+
             InitdvgTypes();
-            InitdgvPersons();
+          //  InitdgvPersons();
             InitdgvDepartments();
+            InitdgvModels();
 
         }
+        #region Initialize DataGridViewes
+
+        private void InitdgvModels()
+        {
+            //this.dgvModels.Columns[2].
+            this.dgvModels.Columns[3].Visible = false;
+        }
+
         //TODO: Check later
         private void InitdgvPersons()
         {
+            /// Keep in safe
             this.dgvPersons.Columns[2].Visible = true;
-            this.dgvPersons.Columns[2].DataPropertyName = cmbbxDepartments.DisplayMember;
+            this.dgvPersons.Columns[2].Name = "Inventory.Core.Domain.Department.Name";
+            this.dgvPersons.Columns[2].ValueType = typeof(Department);
+
         }
         private void InitdvgTypes()
         {
-
-           this.dgvEqTypes.Columns[0].Visible = false;
+            this.dgvEqTypes.Columns[0].Visible = false;
             this.dgvEqTypes.Columns[2].Visible = false;
         }
         private void InitdgvDepartments()
         {
             this.dgvDepartments.Columns[2].Visible = false;
-            
-
         }
+        #endregion
         private void btnMakerName_Click(object sender, EventArgs e)
         {
 
@@ -99,11 +116,12 @@ namespace WFMain
             ui.Persons.Create(new Person { ID = Guid.NewGuid(), Name = txtbxNewPerson.Text.Trim(), Departments = ui.Departments.Get(new Guid((cmbbxDepartments.SelectedValue).ToString())) });
             txtbxNewPerson.Clear();
             ui.SaveAll();
+            dgvPersons.Refresh();
         }
 
         private void btnAddModel_Click(object sender, EventArgs e)
         {
-            ui.Models.Create(new Model { ID = Guid.NewGuid(), Name = txtbxNewModelName.Text.Trim(), Makers = ui.Makers.Get(new Guid((cmbbxMakers.SelectedValue).ToString())) });
+            ui.Models.Create(new Model { ID = Guid.NewGuid(), Name = txtbxNewModelName.Text.Trim(), Makers = ui.Makers.Get(new Guid((cmbbxMakers.SelectedValue).ToString())), Eqtypes = ui.EqTypes.Get(new Guid((cmbbxEqTypeName.SelectedValue.ToString()))) });
             txtbxNewMakerName.Clear();
             ui.SaveAll();
         }
