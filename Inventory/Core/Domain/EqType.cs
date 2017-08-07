@@ -10,7 +10,7 @@ namespace Inventory.Core.Domain
         {
             Models = new HashSet<Model>();
         }
-        public Guid ID { get; set; }
+        public Guid EqTypeID { get; set; }
         [StringLength(50)]
         public string Name { get; set; }
         public virtual ICollection<Model> Models { get; set; }

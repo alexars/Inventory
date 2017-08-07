@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -8,6 +9,8 @@ using Inventory.Core.Domain;
 using Inventory.Core.Repositories;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using Inventory.Core.Domain;
+
 namespace Inventory.Core.Implement
 {
     public class PersonRepository : GenericRepository<Person>, IPersonRepository
@@ -17,19 +20,41 @@ namespace Inventory.Core.Implement
         {
 
         }
-        //TODO: make changes
-        private ObservableCollection<object> people = new ObservableCollection<object>();
+        public override ObservableCollection<Person> GetAll()
+        {
+
+            var people = context.People
+                .Include(d=>d.Departments);
+
+            return new ObservableCollection<Person>(people.ToList());
+        }
+        public List<object> GetPersonsWithDepts()
+        {
+            List<object> persons = new List<object>();
+            //from с in categories
+            //select new { с.Сategory_Id, с.Name, ProductNumber = с.Product.Number };
+            //var list = from c in context.People
+            //           select new { c.PersonID, c.Name, c.DepartmentID, DepartmentsName = c.Departments.Name };
+            //foreach (var item in list)
+            //{
+            //    persons.Add(item);
+            //}
+//
+            return persons;
+
+        }
         public ObservableCollection<object> GetPersonsWithDepartments()
         {
+            ObservableCollection<object> people = new ObservableCollection<object>();
             var search = (from p in context.People
          .Include("Departments")
                           select new
                           {
-                              p.ID,
+                              p.PersonID,
                               p.Name,
                               Department = p.Departments.Name
-                          }).ToList();
-
+                          });
+           
 
             foreach (var item in search)
             {

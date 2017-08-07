@@ -38,7 +38,7 @@ namespace Inventory.Core.Implement
         {
             return context.Set<TEntity>().Find(id);
         }
-
+        
         public virtual ObservableCollection<TEntity> GetAll()
         {
             context.Set<TEntity>().Load();

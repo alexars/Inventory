@@ -18,10 +18,10 @@ namespace Inventory.Core.Implement
             
         }
 
-        public override void Update(Maker entityToUpdate)
-        {
-            base.Update(entityToUpdate);
-        }
+        //public override void Update(Maker entityToUpdate)
+        //{
+        //    base.Update(entityToUpdate);
+        //}
         
         //{
         //    var maker = context.Makers.Find(id);

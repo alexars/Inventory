@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System.Windows.Forms;
 using Inventory.Core.Domain;
 using Inventory.Core.Implement;
@@ -15,17 +9,20 @@ namespace WFMain
     public partial class Form1 : Form
     {
         UnitOfWork ui = new UnitOfWork();
-
+      //  ObservableCollection<object> persons = null;
         public Form1()
         {
             InitializeComponent();
 
             var makers = ui.Makers.GetAll();
             var departments = ui.Departments.GetAll();
-            var persons = ui.Persons.GetPersonsWithDepartments();
+            //  var persons = ui.Persons.GetAll();
+
+           var persons = ui.Persons.GetAll();
             var models = ui.Models.GetAll();
             var types = ui.EqTypes.GetAll();
             var units = ui.Units.GetUnitsWithModelsMakers();
+            var modelsForUnits = ui.Models.GetModelsWithMakers();
 
 
             //Assigne datasources
@@ -36,23 +33,37 @@ namespace WFMain
             dgvEqTypes.DataSource = types.ToBindingList();
             dgvUnit.DataSource = units.ToBindingList();
 
+
+
+
+            #region Combobox initialization block
             cmbbxDepartments.DataSource = departments.ToBindingList();
             cmbbxMakers.DataSource = makers.ToBindingList();
             cmbbxEqTypeName.DataSource = types.ToBindingList();
 
             //  Init Departments ComboBox
             cmbbxDepartments.DisplayMember = "Name";
-            cmbbxDepartments.ValueMember = "ID";
+            cmbbxDepartments.ValueMember = "DepartmentID";
             //Init Equipment Types 
             cmbbxEqTypeName.DisplayMember = "Name";
-            cmbbxEqTypeName.ValueMember = "ID";
+            cmbbxEqTypeName.ValueMember = "EqTypeID";
 
+            //unit
+            //cmbbxUnitMaker.DataSource = modelsForUnits.ToList();
+            //cmbbxUnitMaker.DisplayMember = "Maker";
+            //cmbbxUnitMaker.ValueMember = "UnitID";
+
+            //cmbbxUnitModel.DataSource = modelsForUnits.ToList();
+            //cmbbxUnitModel.DisplayMember = "Model";
+            //cmbbxUnitModel.ValueMember = "ModelID";
             //Init Makers Combobox
             cmbbxMakers.DisplayMember = "Name";
-            cmbbxMakers.ValueMember = "ID";
+            cmbbxMakers.ValueMember = "MakerID";
+            #endregion
+
 
             InitdvgTypes();
-          //  InitdgvPersons();
+            // InitdgvPersons();
             InitdgvDepartments();
             InitdgvModels();
 
@@ -70,8 +81,8 @@ namespace WFMain
         {
             /// Keep in safe
             this.dgvPersons.Columns[2].Visible = true;
-            this.dgvPersons.Columns[2].Name = "Inventory.Core.Domain.Department.Name";
-            this.dgvPersons.Columns[2].ValueType = typeof(Department);
+            this.dgvPersons.Columns["Departments"].DataPropertyName = "Name";
+            //      this.dgvPersons.Columns[2]. = depa;
 
         }
         private void InitdvgTypes()
@@ -87,7 +98,7 @@ namespace WFMain
         private void btnMakerName_Click(object sender, EventArgs e)
         {
 
-            ui.Makers.Create(new Maker() { ID = Guid.NewGuid(), Name = tbMakerName.Text.Trim() });
+            ui.Makers.Create(new Maker() { MakerID = Guid.NewGuid(), Name = tbMakerName.Text.Trim() });
             ui.SaveAll();
             tbMakerName.Clear();
 
@@ -106,14 +117,14 @@ namespace WFMain
         private void btnNewDepartment_Click(object sender, EventArgs e)
         {
 
-            ui.Departments.Create(new Department() { ID = Guid.NewGuid(), Name = txtbxNewDepartment.Text.Trim() });
+            ui.Departments.Create(new Department() { DepartmentID = Guid.NewGuid(), Name = txtbxNewDepartment.Text.Trim() });
             txtbxNewDepartment.Clear();
             ui.SaveAll();
         }
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
-            ui.Persons.Create(new Person { ID = Guid.NewGuid(), Name = txtbxNewPerson.Text.Trim(), Departments = ui.Departments.Get(new Guid((cmbbxDepartments.SelectedValue).ToString())) });
+            ui.Persons.Create(new Person { PersonID = Guid.NewGuid(), Name = txtbxNewPerson.Text.Trim(), Departments = ui.Departments.Get(new Guid((cmbbxDepartments.SelectedValue).ToString())) });
             txtbxNewPerson.Clear();
             ui.SaveAll();
             dgvPersons.Refresh();
@@ -121,18 +132,23 @@ namespace WFMain
 
         private void btnAddModel_Click(object sender, EventArgs e)
         {
-            ui.Models.Create(new Model { ID = Guid.NewGuid(), Name = txtbxNewModelName.Text.Trim(), Makers = ui.Makers.Get(new Guid((cmbbxMakers.SelectedValue).ToString())), Eqtypes = ui.EqTypes.Get(new Guid((cmbbxEqTypeName.SelectedValue.ToString()))) });
+            ui.Models.Create(new Model { ModelID = Guid.NewGuid(), Name = txtbxNewModelName.Text.Trim(), Makers = ui.Makers.Get(new Guid((cmbbxMakers.SelectedValue).ToString())), Eqtypes = ui.EqTypes.Get(new Guid((cmbbxEqTypeName.SelectedValue.ToString()))) });
             txtbxNewMakerName.Clear();
             ui.SaveAll();
+            //dgvpersons.datasource = ui.persons.getpersonswithdepartments();
+            //dgvpersons.refresh();
         }
 
 
 
         private void btnAddNewType_Click(object sender, EventArgs e)
         {
-            ui.EqTypes.Create(new EqType { ID = Guid.NewGuid(), Name = txtbxTypeName.Text.Trim() });
+            ui.EqTypes.Create(new EqType { EqTypeID = Guid.NewGuid(), Name = txtbxTypeName.Text.Trim() });
             txtbxTypeName.Clear();
             ui.SaveAll();
+            //this.persons = ui.Persons.GetPersonsWithDepartments();
+            //this.dgvPersons.DataSource=persons.ToBindingList();
+            //this.dgvPersons.Refresh();
         }
     }
 }

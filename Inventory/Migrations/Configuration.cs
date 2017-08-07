@@ -9,7 +9,7 @@ namespace Inventory.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Inventory.Core.Domain.InventoryContext context)

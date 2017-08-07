@@ -10,9 +10,11 @@ namespace Inventory.Core.Domain
         {
             Units = new HashSet<Unit>();
         }
-        public Guid ID { get; set; }
+        public Guid ModelID { get; set; }
         [StringLength(50)]
         public string Name { get; set; }
+        public Nullable<Guid> MakerID{ get; set; }
+        public Nullable<Guid> EqTypeID { get; set; }
 
         public virtual Maker Makers { get; set; }
         public virtual EqType Eqtypes { get; set; }

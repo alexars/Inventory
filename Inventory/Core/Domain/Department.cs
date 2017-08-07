@@ -13,7 +13,7 @@ namespace Inventory.Core.Domain
         {
             Persons = new HashSet<Person>();
         }
-        public Guid ID { get; set; }
+        public Guid DepartmentID { get; set; }
         [StringLength(50)]
         public string Name { get; set; }
 

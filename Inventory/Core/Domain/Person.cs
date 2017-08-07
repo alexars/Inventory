@@ -5,9 +5,10 @@ namespace Inventory.Core.Domain
 {
     public class Person
     {
-        public Guid ID { get; set; }
+        public Guid PersonID { get; set; }
         [StringLength(50)]
         public string Name { get; set; }
+        public Nullable<Guid> DepartmentID { get; set; }
 
         public virtual Department Departments { get; set; }
 

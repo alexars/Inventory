@@ -20,7 +20,7 @@ namespace Inventory.Core.Implement
 
             var units = (from u in context.Units
                          .Include("Model")
-                         select new { u.ID, u.Model.Name, u.SerialNumber, u.Description }).ToList();
+                         select new { u.UnitID, u.Model.Name, u.SerialNumber, u.Description }).ToList();
             ObservableCollection<object> list = new ObservableCollection<object>();
             foreach (var item in units)
             {

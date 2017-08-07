@@ -10,6 +10,8 @@ namespace Inventory.Core.Repositories
 {
     public interface IPersonRepository : IRepository<Person>
     {
+        //    ObservableCollection<object> GetPersonsWithDepartments();
+         List<object> GetPersonsWithDepts();
         ObservableCollection<object> GetPersonsWithDepartments();
     }
 }

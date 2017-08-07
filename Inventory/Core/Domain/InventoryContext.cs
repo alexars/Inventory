@@ -6,12 +6,13 @@ namespace Inventory.Core.Domain
 {
     public class InventoryContext : DbContext
     {
-        public InventoryContext() : base("name=InventoryContextAlt")
+        public InventoryContext() : base("name=Inventory")
         {
             //var ensureDLLIsCopied =
             //   System.Data.Entity.SqlServer.SqlProviderServices.Instance;
-            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.LazyLoadingEnabled = true;
             this.Configuration.ProxyCreationEnabled = false;
+            //context.Configuration.ProxyCreationEnabled = false;
 
         }
         public virtual DbSet<Unit> Units { get; set; }
