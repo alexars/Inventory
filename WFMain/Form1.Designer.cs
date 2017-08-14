@@ -55,11 +55,11 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvPersons = new System.Windows.Forms.DataGridView();
-            this.unitOfWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddNewPerson = new System.Windows.Forms.Button();
             this.txtbxNewPerson = new System.Windows.Forms.TextBox();
             this.cmbbxDepartments = new System.Windows.Forms.ComboBox();
+            this.unitOfWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -73,6 +73,7 @@
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.cmbbxUnitMaker = new System.Windows.Forms.ComboBox();
             this.cmbbxUnitModel = new System.Windows.Forms.ComboBox();
+            this.unitOfWorkBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModels)).BeginInit();
@@ -88,8 +89,8 @@
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkBindingSource)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -99,6 +100,7 @@
             this.tableLayoutPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnit)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage5
@@ -148,7 +150,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.32076F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.67924F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 433F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel5.Controls.Add(this.btnAddModel, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.txtbxNewModelName, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.cmbbxMakers, 1, 0);
@@ -169,7 +171,7 @@
             this.btnAddModel.Location = new System.Drawing.Point(4, 47);
             this.btnAddModel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddModel.Name = "btnAddModel";
-            this.btnAddModel.Size = new System.Drawing.Size(171, 36);
+            this.btnAddModel.Size = new System.Drawing.Size(169, 36);
             this.btnAddModel.TabIndex = 0;
             this.btnAddModel.Text = "Add new Model";
             this.btnAddModel.UseVisualStyleBackColor = true;
@@ -181,23 +183,23 @@
             this.txtbxNewModelName.Location = new System.Drawing.Point(4, 4);
             this.txtbxNewModelName.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxNewModelName.Name = "txtbxNewModelName";
-            this.txtbxNewModelName.Size = new System.Drawing.Size(171, 22);
+            this.txtbxNewModelName.Size = new System.Drawing.Size(169, 22);
             this.txtbxNewModelName.TabIndex = 1;
             // 
             // cmbbxMakers
             // 
             this.cmbbxMakers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbbxMakers.FormattingEnabled = true;
-            this.cmbbxMakers.Location = new System.Drawing.Point(183, 4);
+            this.cmbbxMakers.Location = new System.Drawing.Point(181, 4);
             this.cmbbxMakers.Margin = new System.Windows.Forms.Padding(4);
             this.cmbbxMakers.Name = "cmbbxMakers";
-            this.cmbbxMakers.Size = new System.Drawing.Size(161, 24);
+            this.cmbbxMakers.Size = new System.Drawing.Size(160, 24);
             this.cmbbxMakers.TabIndex = 2;
             // 
             // cmbbxEqTypeName
             // 
             this.cmbbxEqTypeName.FormattingEnabled = true;
-            this.cmbbxEqTypeName.Location = new System.Drawing.Point(183, 47);
+            this.cmbbxEqTypeName.Location = new System.Drawing.Point(181, 47);
             this.cmbbxEqTypeName.Margin = new System.Windows.Forms.Padding(4);
             this.cmbbxEqTypeName.Name = "cmbbxEqTypeName";
             this.cmbbxEqTypeName.Size = new System.Drawing.Size(160, 24);
@@ -414,16 +416,12 @@
             this.dgvPersons.Size = new System.Drawing.Size(831, 407);
             this.dgvPersons.TabIndex = 0;
             // 
-            // unitOfWorkBindingSource
-            // 
-            this.unitOfWorkBindingSource.DataSource = typeof(Inventory.Core.Implement.UnitOfWork);
-            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.62415F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.37585F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 343F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 346F));
             this.tableLayoutPanel8.Controls.Add(this.btnAddNewPerson, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.txtbxNewPerson, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.cmbbxDepartments, 2, 0);
@@ -435,13 +433,14 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(828, 48);
             this.tableLayoutPanel8.TabIndex = 1;
+            this.tableLayoutPanel8.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel8_Paint);
             // 
             // btnAddNewPerson
             // 
             this.btnAddNewPerson.Location = new System.Drawing.Point(4, 4);
             this.btnAddNewPerson.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.Size = new System.Drawing.Size(159, 39);
+            this.btnAddNewPerson.Size = new System.Drawing.Size(158, 39);
             this.btnAddNewPerson.TabIndex = 0;
             this.btnAddNewPerson.Text = "Add New Person";
             this.btnAddNewPerson.UseVisualStyleBackColor = true;
@@ -449,21 +448,25 @@
             // 
             // txtbxNewPerson
             // 
-            this.txtbxNewPerson.Location = new System.Drawing.Point(171, 4);
+            this.txtbxNewPerson.Location = new System.Drawing.Point(170, 4);
             this.txtbxNewPerson.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxNewPerson.Name = "txtbxNewPerson";
-            this.txtbxNewPerson.Size = new System.Drawing.Size(309, 22);
+            this.txtbxNewPerson.Size = new System.Drawing.Size(307, 22);
             this.txtbxNewPerson.TabIndex = 1;
             // 
             // cmbbxDepartments
             // 
             this.cmbbxDepartments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbbxDepartments.FormattingEnabled = true;
-            this.cmbbxDepartments.Location = new System.Drawing.Point(488, 4);
+            this.cmbbxDepartments.Location = new System.Drawing.Point(485, 4);
             this.cmbbxDepartments.Margin = new System.Windows.Forms.Padding(4);
             this.cmbbxDepartments.Name = "cmbbxDepartments";
-            this.cmbbxDepartments.Size = new System.Drawing.Size(336, 24);
+            this.cmbbxDepartments.Size = new System.Drawing.Size(339, 24);
             this.cmbbxDepartments.TabIndex = 2;
+            // 
+            // unitOfWorkBindingSource
+            // 
+            this.unitOfWorkBindingSource.DataSource = typeof(Inventory.Core.Implement.UnitOfWork);
             // 
             // tabControl1
             // 
@@ -600,7 +603,7 @@
             this.tableLayoutPanel12.ColumnCount = 3;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.22293F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.77707F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 414F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 417F));
             this.tableLayoutPanel12.Controls.Add(this.cmbbxUnitMaker, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.cmbbxUnitModel, 1, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -626,12 +629,16 @@
             // cmbbxUnitModel
             // 
             this.cmbbxUnitModel.FormattingEnabled = true;
-            this.cmbbxUnitModel.Location = new System.Drawing.Point(192, 4);
+            this.cmbbxUnitModel.Location = new System.Drawing.Point(191, 4);
             this.cmbbxUnitModel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbbxUnitModel.Name = "cmbbxUnitModel";
             this.cmbbxUnitModel.Size = new System.Drawing.Size(160, 24);
             this.cmbbxUnitModel.TabIndex = 0;
             this.cmbbxUnitModel.Text = "choose model";
+            // 
+            // unitOfWorkBindingSource1
+            // 
+            this.unitOfWorkBindingSource1.DataSource = typeof(Inventory.Core.Implement.UnitOfWork);
             // 
             // Form1
             // 
@@ -660,9 +667,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkBindingSource)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -673,6 +680,7 @@
             this.tableLayoutPanel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnit)).EndInit();
             this.tableLayoutPanel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWorkBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -722,6 +730,7 @@
         private System.Windows.Forms.BindingSource unitOfWorkBindingSource;
         private System.Windows.Forms.ComboBox cmbbxUnitMaker;
         private System.Windows.Forms.ComboBox cmbbxUnitModel;
+        private System.Windows.Forms.BindingSource unitOfWorkBindingSource1;
     }
 }
 

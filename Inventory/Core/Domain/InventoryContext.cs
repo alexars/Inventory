@@ -23,5 +23,7 @@ namespace Inventory.Core.Domain
         public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
 
+        public virtual DbSet<ViewPeople> ViewPeople { get; set; }
+
     }
 }

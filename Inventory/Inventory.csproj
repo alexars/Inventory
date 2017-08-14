@@ -116,6 +116,8 @@
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Text.Encodings.Web, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.4.3.0\lib\netstandard1.0\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -137,6 +139,7 @@
     <Compile Include="Core\Domain\Model.cs" />
     <Compile Include="Core\Domain\Person.cs" />
     <Compile Include="Core\Domain\Unit.cs" />
+    <Compile Include="Core\Domain\ViewPeople.cs" />
     <Compile Include="Core\Implement\DepartmentRepository.cs" />
     <Compile Include="Core\Implement\GenericRepository.cs" />
     <Compile Include="Core\Implement\LicenceRepository.cs" />
@@ -146,6 +149,7 @@
     <Compile Include="Core\Implement\EqTypesRepository.cs" />
     <Compile Include="Core\Implement\UnitOfWork.cs" />
     <Compile Include="Core\Implement\UnitRepository.cs" />
+    <Compile Include="Core\Implement\ViewPeopleRepository.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IDepartmentRepository.cs" />
     <Compile Include="Core\Repositories\IEqTypeRepository.cs" />
@@ -155,6 +159,7 @@
     <Compile Include="Core\Repositories\IPersonRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="Core\Repositories\IUnitRepository.cs" />
+    <Compile Include="Core\Repositories\IViewPeopleRepository.cs" />
     <Compile Include="Migrations\201703231327552_InitDB.cs" />
     <Compile Include="Migrations\201703231327552_InitDB.Designer.cs">
       <DependentUpon>201703231327552_InitDB.cs</DependentUpon>
@@ -166,6 +171,10 @@
     <Compile Include="Migrations\201705311145509_Object_Unit_Changed.cs" />
     <Compile Include="Migrations\201705311145509_Object_Unit_Changed.Designer.cs">
       <DependentUpon>201705311145509_Object_Unit_Changed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708071434583_ViewPersonAdded.cs" />
+    <Compile Include="Migrations\201708071434583_ViewPersonAdded.Designer.cs">
+      <DependentUpon>201708071434583_ViewPersonAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -188,9 +197,15 @@
     <EmbeddedResource Include="Migrations\201705311145509_Object_Unit_Changed.resx">
       <DependentUpon>201705311145509_Object_Unit_Changed.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708071434583_ViewPersonAdded.resx">
+      <DependentUpon>201708071434583_ViewPersonAdded.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BLL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

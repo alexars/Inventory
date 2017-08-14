@@ -10,7 +10,7 @@ namespace Inventory.Core.Domain
         public string Name { get; set; }
         public Nullable<Guid> DepartmentID { get; set; }
 
-        public virtual Department Departments { get; set; }
+        public virtual Department Department { get; set; }
 
     }
 }

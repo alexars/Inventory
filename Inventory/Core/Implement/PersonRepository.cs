@@ -20,14 +20,14 @@ namespace Inventory.Core.Implement
         {
 
         }
-        public override ObservableCollection<Person> GetAll()
-        {
+        //public override ObservableCollection<Person> GetAll()
+        //{
 
-            var people = context.People
-                .Include(d=>d.Departments);
+        //    var people = context.People
+        //        .Include(d=>d.Departments);
 
-            return new ObservableCollection<Person>(people.ToList());
-        }
+        //    return new ObservableCollection<Person>(people.ToList());
+        //}
         public List<object> GetPersonsWithDepts()
         {
             List<object> persons = new List<object>();
@@ -39,28 +39,28 @@ namespace Inventory.Core.Implement
             //{
             //    persons.Add(item);
             //}
-//
+            //
             return persons;
 
         }
         public ObservableCollection<object> GetPersonsWithDepartments()
         {
-            ObservableCollection<object> people = new ObservableCollection<object>();
-            var search = (from p in context.People
-         .Include("Departments")
-                          select new
-                          {
-                              p.PersonID,
-                              p.Name,
-                              Department = p.Departments.Name
-                          });
-           
 
-            foreach (var item in search)
-            {
-                people.Add(item);
-            }
-            return people;
+
+            var people = from p in context.People
+                         select new { p.PersonID, p.Name, p.DepartmentID,DepName = p.Department.Name };
+
+         
+           
+          
+           
+       
+
+
+           
+            return new ObservableCollection<object>(people.ToList());
         }
+
+       
     }
 }

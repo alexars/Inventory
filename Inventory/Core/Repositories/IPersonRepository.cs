@@ -13,5 +13,6 @@ namespace Inventory.Core.Repositories
         //    ObservableCollection<object> GetPersonsWithDepartments();
          List<object> GetPersonsWithDepts();
         ObservableCollection<object> GetPersonsWithDepartments();
+    //    ObservableCollection<View_PeopleDepartments> GetPersonsView();
     }
 }

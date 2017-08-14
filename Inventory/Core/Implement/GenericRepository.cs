@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Inventory.Core.Repositories;
 using Inventory.Core.Domain;
 using System.Data.Entity;
+
 namespace Inventory.Core.Implement
 {
     public abstract class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : class

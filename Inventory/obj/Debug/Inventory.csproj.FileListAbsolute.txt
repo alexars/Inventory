@@ -137,3 +137,4 @@ C:\Users\alars\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.csproj.
 C:\Users\alars\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.dll
 C:\Users\alars\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.pdb
 C:\Users\alars\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache
+C:\Users\alars\OneDrive\Projects\Inventory\Inventory\obj\Debug\Inventory.Migrations.ViewPersonAdded.resources

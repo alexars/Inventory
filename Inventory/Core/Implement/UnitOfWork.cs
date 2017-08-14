@@ -19,6 +19,7 @@ namespace Inventory.Core.Implement
         private IModelRepoitory modelRepository;
         private IPersonRepository personRepository;
         private IUnitRepository unitRepository;
+        private IViewPeopleRepository viewPeoplRepository;
 
         public UnitOfWork()
         {
@@ -89,6 +90,15 @@ namespace Inventory.Core.Implement
                 if (unitRepository == null)
                     unitRepository = new UnitRepository(_context);
                 return unitRepository;
+            }
+        }
+        public IViewPeopleRepository View_PeopleDepartments
+        {
+            get
+            {
+                if (viewPeoplRepository == null)
+                    viewPeoplRepository = new ViewPeopleRepository(_context);
+                return viewPeoplRepository;
             }
         }
 

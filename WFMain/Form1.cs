@@ -4,12 +4,13 @@ using System.Windows.Forms;
 using Inventory.Core.Domain;
 using Inventory.Core.Implement;
 using System.Data.Entity;
+
 namespace WFMain
 {
     public partial class Form1 : Form
     {
         UnitOfWork ui = new UnitOfWork();
-      //  ObservableCollection<object> persons = null;
+        ObservableCollection<object> persons = null;
         public Form1()
         {
             InitializeComponent();
@@ -18,7 +19,7 @@ namespace WFMain
             var departments = ui.Departments.GetAll();
             //  var persons = ui.Persons.GetAll();
 
-           var persons = ui.Persons.GetAll();
+            persons = ui.Persons.GetPersonsWithDepartments();
             var models = ui.Models.GetAll();
             var types = ui.EqTypes.GetAll();
             var units = ui.Units.GetUnitsWithModelsMakers();
@@ -63,7 +64,7 @@ namespace WFMain
 
 
             InitdvgTypes();
-            // InitdgvPersons();
+            InitdgvPersons();
             InitdgvDepartments();
             InitdgvModels();
 
@@ -79,10 +80,9 @@ namespace WFMain
         //TODO: Check later
         private void InitdgvPersons()
         {
-            /// Keep in safe
-            this.dgvPersons.Columns[2].Visible = true;
-            this.dgvPersons.Columns["Departments"].DataPropertyName = "Name";
-            //      this.dgvPersons.Columns[2]. = depa;
+            dgvPersons.DataSource = ui.Persons.GetPersonsWithDepartments();
+            dgvPersons.Refresh();
+         
 
         }
         private void InitdvgTypes()
@@ -124,10 +124,10 @@ namespace WFMain
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
-            ui.Persons.Create(new Person { PersonID = Guid.NewGuid(), Name = txtbxNewPerson.Text.Trim(), Departments = ui.Departments.Get(new Guid((cmbbxDepartments.SelectedValue).ToString())) });
+            ui.Persons.Create(new Person { PersonID = Guid.NewGuid(), Name = txtbxNewPerson.Text.Trim(), Department = ui.Departments.Get(new Guid((cmbbxDepartments.SelectedValue).ToString())) });
             txtbxNewPerson.Clear();
             ui.SaveAll();
-            dgvPersons.Refresh();
+            this.InitdgvPersons();
         }
 
         private void btnAddModel_Click(object sender, EventArgs e)
@@ -149,6 +149,11 @@ namespace WFMain
             //this.persons = ui.Persons.GetPersonsWithDepartments();
             //this.dgvPersons.DataSource=persons.ToBindingList();
             //this.dgvPersons.Refresh();
+        }
+
+        private void tableLayoutPanel8_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
